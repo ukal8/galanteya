@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic);
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic);
 
@@ -20,8 +19,7 @@ h5 {
 .burger {
   display: none;
   height: 45px;
-  background: url('../img/logo-mobile.png') no-repeat 50%,
-              #83052f;
+  background: url('../img/logo-mobile.png') no-repeat 50%, #83052f;
 }
 
 .burger a {
@@ -36,7 +34,7 @@ h5 {
 body>nav {
   display: inline-block;
   vertical-align: top;
-  max-width: 288px; 
+  max-width: 288px;
   margin-right: 25px;
 }
 
@@ -106,7 +104,7 @@ nav legend {
   vertical-align: sub;
   width: 16px;
   height: 16px;
-  background: url('../icons/ico-book.png') no-repeat;  
+  background: url('../icons/ico-book.png') no-repeat;
 }
 
 .all-news a {
@@ -115,11 +113,13 @@ nav legend {
   font-size: 15px;
 }
 
+
 /*=========================*/
 
 main {
   display: inline-block;
   max-width: 922px;
+  margin-bottom: 45px;
 }
 
 .top-panel {
@@ -176,9 +176,11 @@ main {
   margin-right: 0;
 }
 
+
 /*=========================*/
 
 .hgroup a {
+  color: black;
   font-size: 14px;
   letter-spacing: 0.2px;
 }
@@ -188,7 +190,7 @@ main {
   color: #91733c;
 }
 
-h1, 
+h1,
 h2 {
   text-transform: uppercase;
   text-align: center;
@@ -220,24 +222,24 @@ h2 {
   background: url('../icons/ico-logo.png');
 }
 
+
 /*=========================*/
 
 .submenu ul {
+  display: flex;
   background-color: #f2eada;
   list-style: none;
   padding: 15px;
 }
 
 .submenu li {
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .submenu li:first-child {
   background-color: #74042a;
-} 
+}
 
 .submenu li:first-child a {
   color: #f2eada;
@@ -250,6 +252,7 @@ h2 {
   text-decoration: none;
   border-bottom: 1px dotted #74042a;
 }
+
 
 /*=========================*/
 
@@ -290,7 +293,7 @@ article a:hover {
 }
 
 .dashes {
-  list-style: none;
+  list-style: upper-roman;
 }
 
 .ld-none {
@@ -310,6 +313,14 @@ article a:hover {
   border: 3px solid #91733c;
   opacity: 0.7;
   padding: 25px 75px 30px 30px;
+}
+
+ol {
+  margin-top: -10px;
+}
+
+ol li {
+  padding: 5px;
 }
 
 .small-text {
@@ -353,6 +364,7 @@ thead th:nth-last-child(2) {
   border-left: 1px solid #9b804d;
   border-right: 1px solid #9b804d;
 }
+
 tbody td:nth-child(2),
 tbody td:nth-last-child(2) {
   border-left: 1px solid #b29d76;
@@ -362,6 +374,7 @@ tbody td:nth-last-child(2) {
 tbody tr:last-child {
   font-weight: 700;
 }
+
 
 /*=========================*/
 
@@ -384,6 +397,7 @@ aside p {
   font-size: 13px;
   line-height: 19px;
 }
+
 
 /*=========================*/
 
@@ -415,17 +429,89 @@ textarea:focus {
   box-shadow: 0 0 3px #8d324d;
 }
 
+.form label {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  font-size: 13px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 5px 10px 3px 10px;
+  box-sizing: border-box;
+  width: 294px;
+}
+
+.form em {
+  color: #cd0000;
+  font-size: 13px;
+}
+
+.form textarea {
+  margin-top: 3px;
+  box-sizing: border-box;
+  width: 294px;
+  height: 94px;
+}
+
+label>span:first-child,
+i span {
+  color: #74042a;
+}
+
+form p {
+  font-size: 13px;
+}
+
+form i {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.form input[type="radio"] {
+  margin-right: 7px;
+}
+
+.checkbox {
+  display: inline;
+  margin-right: 10px;
+}
+
+.checkbox input {
+  margin-right: 7px;
+}
+
+.form button {
+  width: 132px;
+  height: 35px;
+  margin-right: 30px;
+  border: none;
+  color: white;
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  background: linear-gradient(0deg, #53011d 27%, #74042a 100%);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.44);
+}
+
+.form button:hover {
+  background: linear-gradient(0deg, #74042a 27%, #53011d 100%);
+}
+
+
+/*=========================*/
+/*========MEDIA============*/
 /*=========================*/
 
 @media only screen and (max-width: 1230px) {
   body>nav {
     display: none;
   }
-
   .burger {
     display: block;
   }
-
   main {
     display: block;
     margin: auto;
@@ -441,476 +527,46 @@ textarea:focus {
     margin: auto;
     padding: 10px;
   }
-  
   aside,
   .top-panel {
     display: none;
   }
-  
   main {
     margin-top: 10px;
     padding: 0 20px;
+  }
+  .golden-border {
+    padding: 25px;
   }
 }
 
 /*smartphones*/
+
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 480px)
+  and (max-device-width: 480px) 
   and (-webkit-min-device-pixel-ratio: 2) {
     article,
-  .form {
-    display: block;
-    margin: auto;
-    padding: 10px;
-  }
-  
-  aside,
-  .top-panel {
-    display: none;
-  }
-  
-  main {
-    margin-top: 10px;
-    padding: 0 20px;
-  }
-  
-  .form {
-    display: none;
-  }
+    .form {
+      display: block;
+      margin: auto;
+      padding: 10px;
+    }
+    aside,
+    .top-panel {
+      display: none;
+    }
+    main {
+      margin-top: 10px;
+      padding: 0 20px;
+    }
+    article hr {
+      display: none;
+    }
+    .golden-border {
+      padding: 25px;
+    }
+    .form {
+      display: none;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
