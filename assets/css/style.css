@@ -328,6 +328,10 @@ ol li {
   line-height: 20px;
 }
 
+.table-wrap {
+  overflow-x: scroll;
+}
+
 table {
   border: 1px solid #b29d76;
 }
