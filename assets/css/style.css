@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic);
-
 body {
   max-width: 1240px;
   margin: auto;
@@ -40,8 +39,8 @@ body>nav {
 
 nav .logo {
   height: 435px;
-  background: url('../img/logo-big.png') no-repeat 50% 35px, 
-              linear-gradient(#83052f 16%, #56031c);
+  background: url('../img/logo-big.png') no-repeat 50% 35px, -webkit-linear-gradient(#83052f 16%, #56031c);
+  background: url('../img/logo-big.png') no-repeat 50% 35px, linear-gradient(#83052f 16%, #56031c);
 }
 
 .news {
@@ -123,10 +122,22 @@ main {
 }
 
 .top-panel {
-  display: flex;
-  justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.top-panel .lang {
+  float: left;
+}
+
+.top-panel .social {
+  float: right;
+}
+
+.top-panel .search-bar {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .top-panel a {
@@ -226,6 +237,9 @@ h2 {
 /*=========================*/
 
 .submenu ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   background-color: #f2eada;
   list-style: none;
@@ -289,11 +303,21 @@ article a:hover {
 }
 
 .disk {
-  list-style: disc;
+  list-style: none;
+}
+
+.disk > li::before {
+  content: "• ";
+  color: #91733c;
 }
 
 .dashes {
-  list-style: upper-roman;
+  list-style: none;
+}
+
+.dashes li::before {
+  content: "— ";
+  color: #91733c;
 }
 
 .ld-none {
@@ -301,8 +325,17 @@ article a:hover {
 }
 
 .donut {
-  list-style: upper-roman;
+  list-style: none;
+  position: relative;
+}
+
+.donut li::before {
+  content: "° ";
   color: #91733c;
+  font-weight: bold;
+  position: absolute;
+  top: 3px;
+  left: 30px;
 }
 
 .golden-border {
@@ -476,16 +509,44 @@ form i {
 }
 
 .form input[type="radio"] {
-  margin-right: 7px;
+  display: none;
 }
 
-.checkbox {
-  display: inline;
+.form input[type="radio"] + label span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: -1px 7px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background: url('../icons/inputs.png') 0 0 no-repeat;
+}
+
+.form input[type="radio"]:checked + label span {
+  background: url('../icons/inputs.png') -14px 0 no-repeat;
+}
+
+.form input[type="checkbox"] {
+  display: none;
+}
+
+.form input[type="checkbox"] + label {
+  display: inline-block;
   margin-right: 10px;
 }
 
-.checkbox input {
-  margin-right: 7px;
+.form input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: -1px 7px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background: url('../icons/inputs.png') -28px 0 no-repeat;
+}
+
+.form input[type="checkbox"]:checked + label span {
+  background: url('../icons/inputs.png') -42px 0 no-repeat;
 }
 
 .form button {
@@ -496,17 +557,23 @@ form i {
   color: white;
   font-family: 'PT Serif', serif;
   font-size: 15px;
-  background: linear-gradient(0deg, #53011d 27%, #74042a 100%);
+  background: -webkit-linear-gradient(90deg, #53011d 27%, #74042a 100%), #74042a;
+  background: linear-gradient(0deg, #53011d 27%, #74042a 100%), #74042a;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.44);
 }
 
 .form button:hover {
-  background: linear-gradient(0deg, #74042a 27%, #53011d 100%);
+  background: -webkit-linear-gradient(90deg, #74042a 27%, #53011d 100%), #53011d;
+  background: linear-gradient(0deg, #74042a 27%, #53011d 100%), #53011d;
 }
 
 
 /*=========================*/
+
+
 /*========MEDIA============*/
+
+
 /*=========================*/
 
 @media only screen and (max-width: 1230px) {
@@ -521,6 +588,7 @@ form i {
     margin: auto;
   }
 }
+
 
 /*=========================*/
 
@@ -544,33 +612,31 @@ form i {
   }
 }
 
+
 /*smartphones*/
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    article,
-    .form {
-      display: block;
-      margin: auto;
-      padding: 10px;
-    }
-    aside,
-    .top-panel {
-      display: none;
-    }
-    main {
-      margin-top: 10px;
-      padding: 0 20px;
-    }
-    article hr {
-      display: none;
-    }
-    .golden-border {
-      padding: 25px;
-    }
-    .form {
-      display: none;
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  article,
+  .form {
+    display: block;
+    margin: auto;
+    padding: 10px;
+  }
+  aside,
+  .top-panel {
+    display: none;
+  }
+  main {
+    margin-top: 10px;
+    padding: 0 20px;
+  }
+  article hr {
+    display: none;
+  }
+  .golden-border {
+    padding: 25px;
+  }
+  .form {
+    display: none;
+  }
 }

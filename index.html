@@ -38,13 +38,13 @@
         <a href="#">Рус</a>
         <a href="#">Eng</a>
       </div>
-      <div class="search-bar">
-        <input type="search" placeholder="Поиск по сайту">
-      </div>
       <div class="social">
         <a href="#" class="fb"></a>
         <a href="#" class="vk"></a>
         <a href="#" class="ok"></a>
+      </div>
+      <div class="search-bar">
+        <input type="search" placeholder="Поиск по сайту">
       </div>
     </div>
 
@@ -104,8 +104,8 @@
       <hr/>
       <p class="small-text">О востребованности продукции ОАО «Галантэя» говорит и постоянный рост фирменной сети. В настоящее время у предприятия 21 фирменный магазин. И представительства: 1 филиал в Республике Беларусь, дилеры в г. Москва, г. Санкт-Петербург, г. Ростов-на-Дону, г. Челябинск, г. Кишинев. Сейчас работа компании направлена на улучшение, совершенствование и расширение фирменной сети.</p>
       <p class="small-text">Благодаря новой системе работы с нашими клиентами, посредством формирования электронных заявок, с каждым днем увеличивается количество магазинов, реализующих изделия ОАО «Галантэя».</p>
-        <div class="table-wrap">
-         <table>
+      <div class="table-wrap">
+        <table>
           <thead>
             <tr>
               <th>При этом</th>
@@ -187,20 +187,16 @@
         </label>
         <hr/>
         <p>Выберите один из пунктов</p>
-        <label>
-          <input type="radio" /><span>Выбор 1</span>
-        </label>
-        <label>
-          <input type="radio" /><span>Выбор 2</span>
-        </label>
+        <input type="radio" id="r1" name="option" />
+        <label for="r1"><span></span>Выбор 1</label>
+        <input type="radio" id="r2" name="option" />
+        <label for="r2"><span></span>Выбор 2</label>
         <hr/>
         <p>Отметьте галочками необходимые поля</p>
-        <label class="checkbox">
-          <input type="checkbox" /><span>Выбор 1</span>
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" /><span>Выбор 2</span>
-        </label>
+        <input type="checkbox" id="c1" name="option" />
+        <label for="c1"><span></span>Выбор 1</label>
+        <input type="checkbox" id="c2" name="option" />
+        <label for="c2"><span></span>Выбор 2</label>
         <hr/>
         <i><span>&#42;</span> Поля обязательные для заполнения</i>
         <button>Отправить</button>
